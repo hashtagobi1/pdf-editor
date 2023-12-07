@@ -72,16 +72,16 @@ const PDFTest = ({ name, companyName }: Props) => {
                 style={tw("flex flex-col mb-12 justify-center items-center")}
               >
                 <Text style={tw("text-4xl ")}>{documentTitle}</Text>
-                <Text
-                  style={tw("italic")}
-                >{`${company}'s Calculation Reports for: ${today.toLocaleString(
-                  "default",
-                  {
+                <Text style={tw("italic")}>
+                  <Text
+                    style={tw("text-red-500 uppercase")}
+                  >{`${company}'s `}</Text>
+                  {`Calculation Reports for: ${today.toLocaleString("default", {
                     month: "long",
                     day: "2-digit",
                     year: "2-digit",
-                  }
-                )}`}</Text>
+                  })}`}
+                </Text>
               </View>
               <View style={tw("flex flex-row justify-between")}>
                 <View style={tw("flex flex-col text-base p-2")}>

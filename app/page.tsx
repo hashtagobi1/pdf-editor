@@ -18,14 +18,14 @@ export default function Home() {
   const handleNameChange = (e: any) => {
     e.preventDefault();
     set_OwnName((prev) => {
-      console.log({ prev, Name: e.target.value });
+      console.log({ prev, CockName: e.target.value });
       return e.target.value;
     });
   };
   const handleCompanyChange = (e: any) => {
     e.preventDefault();
     set_Company((prev) => {
-      console.log({ prev, Name: e.target.value });
+      console.log({ prev, CockCompany: e.target.value });
       return e.target.value;
     });
   };
@@ -34,6 +34,11 @@ export default function Home() {
     setClicked(true);
     set_Company(_company);
     set_OwnName(_ownName);
+  };
+  const handleDownload = (loading: boolean) => {
+    set_Company(_company);
+    set_OwnName(_ownName);
+    return loading ? "Loading document..." : "Download now!";
   };
 
   return (
@@ -87,11 +92,10 @@ export default function Home() {
                       fileName={`${_company}_report__example.pdf`}
                     >
                       {({ blob, url, loading, error }) =>
-                        loading ? "Loading document..." : "Download now!"
+                        handleDownload(loading)
                       }
                     </PDFDownloadLink>
                   </button>
-
                   <button
                     className="bg-gray-500 rounded-md border border-black text-white max-w-sm p-4 mt-3"
                     onClick={() => window.location.reload()}
