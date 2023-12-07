@@ -93,7 +93,7 @@ export default function Home() {
                   </button>
 
                   <button
-                    className="bg-red-500 rounded-md border border-black text-white max-w-sm p-4 mt-3"
+                    className="bg-gray-500 rounded-md border border-black text-white max-w-sm p-4 mt-3"
                     onClick={() => window.location.reload()}
                   >
                     Restart
