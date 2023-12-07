@@ -84,7 +84,7 @@ export default function Home() {
                       document={
                         <PDFTest companyName={_company} name={_ownName} />
                       }
-                      fileName="somename.pdf"
+                      fileName={`${_company}_report__example.pdf`}
                     >
                       {({ blob, url, loading, error }) =>
                         loading ? "Loading document..." : "Download now!"
